@@ -391,12 +391,8 @@ impl crypto::PacketKey for PacketKey {
 
 /// Cipher suites suitable for QUIC
 ///
-/// The list is equivalent to TLS1.3 ciphers.
-/// It matches the rustls prefernce list that was introduced with
-/// https://github.com/ctz/rustls/commit/7117a805e0104705da50259357d8effa7d599e37.
-/// This list prefers AES ciphers, which are hardware accelerated on most platforms.
-/// This list can be removed if the rustls dependency is updated to a new version
-/// which contains the linked change.
+/// This includes only the TLS 1.3 cipher suites, so that we make sure no TLS 1.2
+/// crypto code needs to be linked into projects that (only) use quinn.
 pub(crate) static QUIC_CIPHER_SUITES: [rustls::SupportedCipherSuite; 3] = [
     rustls::cipher_suite::TLS13_AES_256_GCM_SHA384,
     rustls::cipher_suite::TLS13_AES_128_GCM_SHA256,
