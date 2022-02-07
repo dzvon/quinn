@@ -49,7 +49,7 @@ bencher = "0.1.5"
 directories-next = "2"
 futures-util = { version = "0.3.11", default-features = false, features = ["async-await-macro"] }
 rand = "0.8"
-rcgen = "0.8"
+rcgen = "0.9"
 rustls-pemfile = "0.2.1"
 structopt = "0.3.0"
 tokio = { version = "1.0.1", features = ["rt", "rt-multi-thread", "time", "macros", "sync"] }
