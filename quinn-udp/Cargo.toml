@@ -23,7 +23,7 @@ maintenance = { status = "experimental" }
 [dependencies]
 libc = "0.2.69"
 proto = { package = "quinn-proto", path = "../quinn-proto", version = "0.9", default-features = false }
-socket2 = "0.4"
+socket2 = "0.5"
 tracing = "0.1.10"
 
 [target.'cfg(windows)'.dependencies]
